@@ -1,0 +1,8 @@
+<form action='{% url 'index' %}' method="post">
+{% csrf_token %}
+    type your url:
+    <input type="text" name="long-url">
+    <input type="submit" value="short-url">
+</form>
+
+{{msg}}
