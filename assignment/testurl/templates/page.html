@@ -1,0 +1,33 @@
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<center><h2>URL SHORTNER</h2>
+<input type ="text" id="url" name="url"><br><br>
+ {% csrf_token %}
+<div><input type="submit" id="submit" value="submit" ><br><br></div>
+<div id="div1"><a target='_blank' id="link" href =""></a></div>
+</center>
+
+<script >
+$(function(){
+
+    $("#submit").click(function() {
+        $.ajax({
+            type: "POST",
+            url: "/api/short_url/",
+            data: {
+            'url':$('#url').val(),
+            'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+            },
+            success: function(data) {
+                if (data.short_id){
+                var url_link ='127.0.0.1:8000/'+data.short_id
+                    $("#link").text(url_link),
+                    $("#link").attr("href",data.url)
+                }
+                else{
+                    alert("enter valid url")
+                    }
+            }
+        })
+    });
+    });
+</script>

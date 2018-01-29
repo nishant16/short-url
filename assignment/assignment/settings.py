@@ -25,7 +25,7 @@ SECRET_KEY = '^i)6in7@!&@+%=&*0dui3vja*=#n^w=yu#*=011(tcy64@*b9g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'testurl',
     'debug_toolbar',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -51,7 +52,7 @@ MIDDLEWARE = [
 
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'testurl.middleware.StatMiddleware',
+   # 'testurl.middleware.StatMiddleware',
 ]
 
 ROOT_URLCONF = 'assignment.urls'
@@ -126,6 +127,6 @@ STATIC_URL = '/static/'
 
 ACCESS_TOKEN_BITLY = '4bedec3e055160530b5b632a3b04741869835441'
 
-SITE_URL = "http://localhost:8000"
+SITE_URL = "http://10.10.220:8000"
 
 INTERNAL_IPS = "127.0.0.1:8000"

@@ -1,0 +1,43 @@
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+<input type="text" id="url" name="url" ><br>
+ <a href="" id="link"><input type="submit" id="submit" value="submit"></a><br>
+
+<script>
+$(document).ready(function(){
+    $("#submit").click(function(){
+        var check = "/check_get?url="+$("#url").val();
+        $("#link").attr("href",check);
+    });
+});
+<!--done url short with a get request-->
+
+$(document).ready(function(){
+    $("#table").DataTable();
+});
+</script>
+<!--hadnot used ajax used here but we can for further use or acc. to requirement-->
+<div style="width:600px; border:1px solid black;padding:3px">
+<table id="table">
+ <thead>
+ <tr>
+  <th>rollno</th>
+  <th>name</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+  <td>1</td>
+  <td>nishant</td>
+ </tr>
+ <tr>
+  <td>2</td>
+  <td>harshit</td>
+ </tr>
+ </tbody>
+</table>
+</div>
